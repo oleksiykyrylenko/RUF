@@ -12,17 +12,29 @@ namespace RoundUpFundraiser
     public class BaseTest
     {
         protected IWebDriver driver;
+        protected string URL;
 
         [SetUp]  
         public void SetUP()
         {
             driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
         }
 
         [TearDown]
         public void TearDown()
         {
             driver.Quit();
+        }
+
+        public void GoToPage(string URL)
+        {
+
+            this.URL = URL;
+            if (!driver.Url.Equals(URL))
+            {
+                driver.Navigate().GoToUrl(URL);
+            }
         }
     }
 }
