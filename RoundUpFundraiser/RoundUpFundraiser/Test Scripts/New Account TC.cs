@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace RoundUpFundraiser.Test_Scripts
 {
-    public class New_Account_TC
+   [TestFixture]
+    public class New_Account_TC : BaseTest
     {
-
+        private string CreateAccountURL = "https://roundupfundraiser-staging.azurewebsites.net/User/UserNew";
         public New_Account_TC()
         {
                     
@@ -23,9 +24,9 @@ namespace RoundUpFundraiser.Test_Scripts
     'Enter email address' and 'Confirm email address' and 'Enter password' fields contain stated placeholder text
        */
 
-        public void Verify_Sign_Up_Page()
+        public void Verify_Create_Account_Page()
         {
-
+            GoToPage(CreateAccountURL);
         }
     }
 }
