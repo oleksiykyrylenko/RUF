@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseTest.cs" />
+    <Compile Include="Helpers\Base Page.cs" />
+    <Compile Include="Helpers\BaseTest.cs" />
+    <Compile Include="POMs\Create New Account Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test Scripts\New Account TC.cs" />
   </ItemGroup>
