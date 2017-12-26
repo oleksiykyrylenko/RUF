@@ -1,8 +1,10 @@
 ﻿using NUnit.Framework;
+using RoundUpFundraiser.POMs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RoundUpFundraiser.Test_Scripts
@@ -26,7 +28,10 @@ namespace RoundUpFundraiser.Test_Scripts
 
         public void Verify_Create_Account_Page()
         {
+            Create_New_Account_Page newAccountPage = new Create_New_Account_Page(driver); 
             GoToPage(CreateAccountURL);
+            Thread.Sleep(5000);
+            newAccountPage.VerifyTextInInputFields();
         }
     }
 }

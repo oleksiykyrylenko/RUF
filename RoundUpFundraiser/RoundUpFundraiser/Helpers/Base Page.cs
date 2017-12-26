@@ -17,19 +17,17 @@ namespace RoundUpFundraiser.Helpers
             this.driver = driver;
         }
 
-        public IWebElement FindElementByCSS(By element)
+
+        public String GetAttributeValue(IWebElement element, string attribute)
         {
-            return driver.FindElement(element);
+            return element.GetAttribute(attribute);
+            
+        }
+        
+        public void VerifyAttributeValue(IWebElement element, string attribute, string expectedResult)
+        {
+            Assert.That(GetAttributeValue(element, attribute), Is.EqualTo(expectedResult));
         }
 
-        public String GetTextFromInputField(By by)
-        {
-            return FindElementByCSS(by).Text;
-        }
-
-        public void VerifyTwoStrings(By by, string txt)
-        {
-            Assert.That(GetTextFromInputField(by), Is.EqualTo(txt));
-        }
     }
 }
